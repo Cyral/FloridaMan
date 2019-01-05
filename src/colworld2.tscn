@@ -26,9 +26,10 @@ extents = Vector2( 8, 8 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 8, 8 )
 } ]
 
-[node name="colworld" type="Node2D" index="0"]
+[node name="colworld" type="Node2D"]
 
 script = ExtResource( 1 )
+world_scene = null
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 

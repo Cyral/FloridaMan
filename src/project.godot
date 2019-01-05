@@ -11,7 +11,7 @@ config_version=3
 [application]
 
 config/name="Kinematic Character"
-run/main_scene="res://colworld.tscn"
+run/main_scene="res://Main Menu.tscn"
 config/icon="res://icon.png"
 
 [display]

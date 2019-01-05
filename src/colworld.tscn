@@ -1,12 +1,13 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://colworld.gd" type="Script" id=1]
 [ext_resource path="res://obstacle.png" type="Texture" id=2]
 [ext_resource path="res://player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://moving_platform1.gd" type="Script" id=4]
 [ext_resource path="res://princess.png" type="Texture" id=5]
-[ext_resource path="res://circle.png" type="Texture" id=6]
-[ext_resource path="res://long_obstacle.png" type="Texture" id=7]
+[ext_resource path="res://pubsub.png" type="Texture" id=6]
+[ext_resource path="res://circle.png" type="Texture" id=7]
+[ext_resource path="res://long_obstacle.png" type="Texture" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -35,7 +36,7 @@ extents = Vector2( 8, 8 )
 custom_solver_bias = 0.0
 extents = Vector2( 8, 8 )
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 
 resource_name = "leftright"
 length = 10.0
@@ -54,7 +55,7 @@ tracks/0/keys = {
 "values": [ Vector2( 184, 152 ), Vector2( 184, 152 ), Vector2( 328.086, 152 ), Vector2( 328.086, 152 ) ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=5]
 
 length = 10.0
 loop = true
@@ -72,22 +73,22 @@ tracks/0/keys = {
 "values": [ Vector2( 88.3493, 296 ), Vector2( 88.3493, 296 ), Vector2( 88.3493, 152 ), Vector2( 88.3493, 152 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=6]
 
 custom_solver_bias = 0.0
 extents = Vector2( 8, 8 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=7]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 4 )
 
-[sub_resource type="CircleShape2D" id=9]
+[sub_resource type="CircleShape2D" id=8]
 
 custom_solver_bias = 0.0
 radius = 32.0
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=9]
 
 length = 20.0
 loop = true
@@ -105,12 +106,12 @@ tracks/0/keys = {
 "values": [ 0.0, 90.0, 0.0, -90.0 ]
 }
 
-[sub_resource type="RectangleShape2D" id=11]
+[sub_resource type="RectangleShape2D" id=10]
 
 custom_solver_bias = 0.0
 extents = Vector2( 8, 8 )
 
-[sub_resource type="RectangleShape2D" id=12]
+[sub_resource type="RectangleShape2D" id=11]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32, 8 )
@@ -188,8 +189,8 @@ autoplay = "updown"
 playback_process_mode = 0
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/leftright = SubResource( 5 )
-anims/updown = SubResource( 6 )
+anims/leftright = SubResource( 4 )
+anims/updown = SubResource( 5 )
 blend_times = [  ]
 
 [node name="princess" type="Area2D" parent="." index="4"]
@@ -202,16 +203,46 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="collision" type="CollisionShape2D" parent="princess" index="0"]
 
-shape = SubResource( 7 )
+shape = SubResource( 6 )
 
 [node name="Sprite" type="Sprite" parent="princess" index="1"]
 
 texture = ExtResource( 5 )
 
-[node name="youwin" type="Label" parent="." index="5"]
+[node name="Pubsub" type="Area2D" parent="." index="5"]
+
+position = Vector2( 97, 72 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="collision" type="CollisionShape2D" parent="Pubsub" index="0"]
+
+position = Vector2( 26.4736, 52.4331 )
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Pubsub" index="1"]
+
+position = Vector2( 26.4736, 53.4612 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="youwin" type="Label" parent="." index="6"]
 
 visible = false
 anchor_left = 0.0
@@ -235,7 +266,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="oneway1" type="KinematicBody2D" parent="." index="6"]
+[node name="oneway1" type="KinematicBody2D" parent="." index="7"]
 
 position = Vector2( 439, 308 )
 input_pickable = false
@@ -250,10 +281,10 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="oneway1" index="1"]
 
-shape = SubResource( 8 )
+shape = SubResource( 7 )
 one_way_collision = true
 
-[node name="oneway2" type="KinematicBody2D" parent="." index="7"]
+[node name="oneway2" type="KinematicBody2D" parent="." index="8"]
 
 position = Vector2( 456, 308 )
 input_pickable = false
@@ -268,10 +299,10 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="oneway2" index="1"]
 
-shape = SubResource( 8 )
+shape = SubResource( 7 )
 one_way_collision = true
 
-[node name="oneway3" type="KinematicBody2D" parent="." index="8"]
+[node name="oneway3" type="KinematicBody2D" parent="." index="9"]
 
 position = Vector2( 471.848, 308 )
 input_pickable = false
@@ -286,10 +317,10 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="oneway3" index="1"]
 
-shape = SubResource( 8 )
+shape = SubResource( 7 )
 one_way_collision = true
 
-[node name="oneway4" type="KinematicBody2D" parent="." index="9"]
+[node name="oneway4" type="KinematicBody2D" parent="." index="10"]
 
 position = Vector2( 487, 308 )
 input_pickable = false
@@ -304,10 +335,10 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="oneway4" index="1"]
 
-shape = SubResource( 8 )
+shape = SubResource( 7 )
 one_way_collision = true
 
-[node name="circle" type="KinematicBody2D" parent="." index="10"]
+[node name="circle" type="KinematicBody2D" parent="." index="11"]
 
 position = Vector2( 241.169, 304.126 )
 rotation = 0.358259
@@ -318,11 +349,11 @@ collision/safe_margin = 0.08
 
 [node name="sprite" type="Sprite" parent="circle" index="0"]
 
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="circle" index="1"]
 
-shape = SubResource( 9 )
+shape = SubResource( 8 )
 
 [node name="anim" type="AnimationPlayer" parent="circle" index="2"]
 
@@ -331,20 +362,20 @@ autoplay = "turn"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/turn = SubResource( 10 )
+anims/turn = SubResource( 9 )
 blend_times = [  ]
 
 [node name="box" type="CollisionShape2D" parent="circle" index="3"]
 
 position = Vector2( -0.440125, -37.0904 )
-shape = SubResource( 11 )
+shape = SubResource( 10 )
 
 [node name="boxsprite" type="Sprite" parent="circle" index="4"]
 
 position = Vector2( 0, -37.4108 )
 texture = ExtResource( 2 )
 
-[node name="platform" type="StaticBody2D" parent="." index="11"]
+[node name="platform" type="StaticBody2D" parent="." index="12"]
 
 position = Vector2( 243.575, 395.018 )
 rotation = -0.428054
@@ -361,13 +392,13 @@ __meta__ = {
 
 [node name="sprite" type="Sprite" parent="platform" index="0"]
 
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platform" index="1"]
 
-shape = SubResource( 12 )
+shape = SubResource( 11 )
 
-[node name="platform1" type="StaticBody2D" parent="." index="12"]
+[node name="platform1" type="StaticBody2D" parent="." index="13"]
 
 position = Vector2( 369.116, 394.016 )
 rotation = 0.465931
@@ -381,12 +412,14 @@ bounce = 0.0
 
 [node name="sprite" type="Sprite" parent="platform1" index="0"]
 
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platform1" index="1"]
 
-shape = SubResource( 12 )
+shape = SubResource( 11 )
 
 [connection signal="body_entered" from="princess" to="." method="_on_princess_body_enter"]
+
+[connection signal="body_entered" from="Pubsub" to="." method="_on_Pubsub_body_entered"]
 
 
