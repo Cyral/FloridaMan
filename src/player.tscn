@@ -17,6 +17,17 @@ collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
+GRAVITY = 1500.0
+FLOOR_ANGLE_TOLERANCE = 40
+WALK_FORCE = 800
+WALK_MIN_SPEED = 30
+WALK_MAX_SPEED = 400
+STOP_FORCE = 2000
+JUMP_SPEED = 1000
+JUMP_MAX_AIRBORNE_TIME = 0.4
+WALL_JUMP_PUSH_MULTIPLIER = 0.7
+SLIDE_STOP_VELOCITY = 1.0
+SLIDE_STOP_MIN_TRAVEL = 1.0
 
 [node name="sprite" type="Sprite" parent="." index="0"]
 

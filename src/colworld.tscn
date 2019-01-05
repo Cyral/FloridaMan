@@ -69,6 +69,17 @@ _sections_unfolded = [ "Cell", "Collision", "Transform" ]
 
 position = Vector2( 352.899, 270.455 )
 _sections_unfolded = [ "Transform", "collision" ]
+GRAVITY = 1500.0
+FLOOR_ANGLE_TOLERANCE = 40
+WALK_FORCE = 800
+WALK_MIN_SPEED = 30
+WALK_MAX_SPEED = 400
+STOP_FORCE = 2000
+JUMP_SPEED = 1000
+JUMP_MAX_AIRBORNE_TIME = 0.4
+WALL_JUMP_PUSH_MULTIPLIER = 0.7
+SLIDE_STOP_VELOCITY = 1.0
+SLIDE_STOP_MIN_TRAVEL = 1.0
 
 [node name="moving_platform1" type="KinematicBody2D" parent="." index="2"]
 

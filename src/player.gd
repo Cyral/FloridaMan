@@ -3,30 +3,17 @@ extends KinematicBody2D
 # This demo shows how to build a kinematic controller.
 
 # Member variables
-<<<<<<< HEAD
-export (int) var GRAVITY = 500.0 # pixels/second/second
+export (int) var  GRAVITY = 1500.0 # pixels/second/second
 
 # Angle in degrees towards either side that the player can consider "floor"
 export (int) var FLOOR_ANGLE_TOLERANCE = 40
-export (int) var WALK_FORCE = 600
-export (int) var WALK_MIN_SPEED = 10
-export (int) var WALK_MAX_SPEED = 200
-export (int) var STOP_FORCE = 1300
-export (int) var JUMP_SPEED = 200
-export (int) var JUMP_MAX_AIRBORNE_TIME = 0.2
-export (int) var WALL_JUMP_PUSH_MULTIPLIER = 1.5
-=======
-const GRAVITY = 1500.0 # pixels/second/second
-
-# Angle in degrees towards either side that the player can consider "floor"
-const FLOOR_ANGLE_TOLERANCE = 40
-const WALK_FORCE = 800
-const WALK_MIN_SPEED = 30
-const WALK_MAX_SPEED = 400
-const STOP_FORCE = 2000
-const JUMP_SPEED = 1000
-const JUMP_MAX_AIRBORNE_TIME = 0.4
->>>>>>> 9488755a1764c1a875aa9b4f5caf2499d42eb02d
+export (int) var WALK_FORCE = 800
+export (int) var WALK_MIN_SPEED = 30
+export (int) var WALK_MAX_SPEED = 400
+export (int) var STOP_FORCE = 2000
+export (int) var JUMP_SPEED = 1000
+export (int) var JUMP_MAX_AIRBORNE_TIME = 0.4
+export (int) var WALL_JUMP_PUSH_MULTIPLIER = 0.7
 
 export (int) var SLIDE_STOP_VELOCITY = 1.0 # one pixel/second
 export (int) var SLIDE_STOP_MIN_TRAVEL = 1.0 # one pixel
@@ -101,4 +88,4 @@ func _physics_process(delta):
 	
 	on_air_time += delta
 	prev_jump_pressed = jump
-	prev_wall_hugged = all_touched
+	prev_wall_hugged = wall_touched
