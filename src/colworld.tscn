@@ -118,7 +118,7 @@ extents = Vector2( 32, 8 )
 [node name="colworld" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
-world_scene = null
+world_scene = "res://colworld2.tscn"
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 
