@@ -39,7 +39,7 @@ extents = Vector2( 8, 8 )
 custom_solver_bias = 0.0
 extents = Vector2( 8, 8 )
 
-[node name="colworld" type="Node2D"]
+[node name="colworld" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 world_scene = "res://colworld2.tscn"
