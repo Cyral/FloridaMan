@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Sky.png-7420f3cf7fb3a60b147001a2d99a55db.stex"
+path="res://.import/long_obstacle.png-1b33440a15b4db156b2a9ec7e9a2a80e.stex"
 
 [deps]
 
-source_file="res://Sprites/Tiles/Sky.png"
-dest_files=[ "res://.import/Sky.png-7420f3cf7fb3a60b147001a2d99a55db.stex" ]
+source_file="res://long_obstacle.png"
+dest_files=[ "res://.import/long_obstacle.png-1b33440a15b4db156b2a9ec7e9a2a80e.stex" ]
 
 [params]
 

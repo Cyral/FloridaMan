@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BigChungo.png-bf5dacc0f423c6b38b85df681461263b.stex"
+path="res://.import/player.png-2dd0af52de4b213777cd8c9df94c0978.stex"
 
 [deps]
 
-source_file="res://BigChungo.png"
-dest_files=[ "res://.import/BigChungo.png-bf5dacc0f423c6b38b85df681461263b.stex" ]
+source_file="res://player.png"
+dest_files=[ "res://.import/player.png-2dd0af52de4b213777cd8c9df94c0978.stex" ]
 
 [params]
 

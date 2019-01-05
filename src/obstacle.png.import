@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Idle0.png-7f3430501802949ad0d6ed458caabfca.stex"
+path="res://.import/obstacle.png-dfb3e99d3af573251007cdf5e1c252b9.stex"
 
 [deps]
 
-source_file="res://Sprites/Player/Idle0.png"
-dest_files=[ "res://.import/Idle0.png-7f3430501802949ad0d6ed458caabfca.stex" ]
+source_file="res://obstacle.png"
+dest_files=[ "res://.import/obstacle.png-dfb3e99d3af573251007cdf5e1c252b9.stex" ]
 
 [params]
 
@@ -16,7 +16,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -25,5 +25,5 @@ process/premult_alpha=false
 process/HDR_as_SRGB=false
 stream=false
 size_limit=0
-detect_3d=false
+detect_3d=true
 svg/scale=1.0
